@@ -17,7 +17,7 @@ about the folder structure.
 * **views:**          contains all EJS views for rendering dynamic pages
 
 
-DelveTo can be deployed using docker both locally and to aws. When deploying
+Pnd can be deployed using docker both locally and to aws. When deploying
 locally you can create both development *(port 1337)* & production *(port 80)* containers. 
 On aws the environment is set to production. 
 
