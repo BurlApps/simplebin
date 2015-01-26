@@ -5,4 +5,4 @@ git add --all .
 git commit -m "$1"
 git push origin master
 
-bash local.redeploy.sh "$2"
+bash docker.redeploy.sh "$2"

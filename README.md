@@ -21,8 +21,10 @@ Pnd can be deployed using docker both locally and to aws. When deploying
 locally you can create both development *(port 1337)* & production *(port 80)* containers. 
 On aws the environment is set to production. 
 
-* Deploying locally `bash scripts/local.deploy.sh [dev | prod | both]`
+* Deploying locally `bash scripts/local.deploy.sh`
 
-* Redeploying locally `bash scripts/local.redeploy.sh [dev | prod | both]`
+* Deploying on docker `bash scripts/docker.deploy.sh [dev | prod | both]`
+
+* Redeploying on docker `bash scripts/docker.redeploy.sh [dev | prod | both]`
 
 * Deploying on AWS `bash scripts/aws.redeploy.sh`

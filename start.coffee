@@ -9,7 +9,7 @@ child = new (forever.Monitor) "#{__dirname}/server.coffee",
     max: config.forever.max_failures
     silent: config.forever.silent
     spinSleepTime: 10
-    watch: if (process.env.NODE_ENV == "production") then false else config.forever.watch
+    watch: if (process.env.NODE_ENV is "production") then false else config.forever.watch
     watchDirectory: "#{__dirname}/#{config.forever.watch_directory}"
     watchIgnoreDotFiles: config.forever.watch_ignore_dot
     watchIgnorePatterns: config.forever.watch_ignore_patterns.map (value)->
