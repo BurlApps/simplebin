@@ -21,9 +21,10 @@
 		"debug":false,
 		"protocol":"mysql:",
 		"host":"127.0.0.1",
-		"database":"",
-		"user":"root",
-		"password":""
+		"database":"enjoypnd",
+		"username":"root",
+		"password":"",
+		"port": 3306
 	},
 	"stripe":{
 		"production":"",

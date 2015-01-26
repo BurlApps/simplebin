@@ -1,6 +1,7 @@
 # Import NPM Modules
-config = require './config'
-forever = require 'forever-monitor'
+config        = require './config'
+forever       = require 'forever-monitor'
+isProduction  = process.env.NODE_ENV is "production"
 
 # Configure Forever (Daemon & File Watcher)
 child = new (forever.Monitor) "#{__dirname}/server.coffee",
@@ -9,7 +10,7 @@ child = new (forever.Monitor) "#{__dirname}/server.coffee",
     max: config.forever.max_failures
     silent: config.forever.silent
     spinSleepTime: 10
-    watch: if (process.env.NODE_ENV is "production") then false else config.forever.watch
+    watch: if isProduction then false else config.forever.watch
     watchDirectory: "#{__dirname}/#{config.forever.watch_directory}"
     watchIgnoreDotFiles: config.forever.watch_ignore_dot
     watchIgnorePatterns: config.forever.watch_ignore_patterns.map (value)->
