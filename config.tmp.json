@@ -48,6 +48,6 @@
 		],
 		"max_failures": 1000,
 		"output_log": "logs/server.out",
-		"error_log": "logs/log.error"
+		"error_log": "logs/server.error"
 	}
 }

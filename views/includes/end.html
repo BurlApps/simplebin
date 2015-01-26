@@ -1,0 +1,30 @@
+    <!-- Site Config -->
+    <script type="text/javascript">
+      window.config = {
+        host: "<%= host %>",
+        title: "<%= full_title %>",
+        name: "<%= site_title %>",
+        delimeter: "<%= site_delimeter %>",
+        logo: "<%= logos["500"] + random %>",
+        icons: <%- JSON.stringify(icons) %>,
+        <%
+          Object.keys(config).forEach(function(key) {
+          var value = config[key]
+
+          if(typeof value == "boolean") { %>
+            <%= key %>: <%- value %>,
+          <% } else if(typeof value == "object") { %>
+            <%= key %>: <%- JSON.stringify(value) %>,
+          <% } else if(typeof value == "number") { %>
+            <%= key %>: <%= value %>,
+          <% } else  { %>
+            <%= key %>: "<%= value %>",
+          <% } %>
+        <% }); %>
+      }
+    </script>
+
+    <!-- Javascript -->
+    <%- js %>
+  </body>
+</html>
