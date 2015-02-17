@@ -18,6 +18,7 @@
 		"serve-static": "1.8.1",
 		"morgan": "1.5.1",
 		"sequelize": "2.0.0-rc8",
-		"mysql": "2.5.4"
+		"mysql": "2.5.4",
+		"piler": "0.5.1"
 	}
 }

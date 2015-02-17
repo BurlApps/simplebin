@@ -4,11 +4,17 @@ fs    = require "fs"
 
 # Initialize Piler
 pilers =
-  coffee : piler.createJSManager urlRoot: "/js/"
-  less   : piler.createCSSManager urlRoot: "/css/"
+  coffee:
+    piler: piler.createJSManager urlRoot: "/js/"
+    formats: ["coffee", "js"]
+  less:
+    piler: piler.createCSSManager urlRoot: "/css/"
+    formats: ["less", "css"]
 
 module.exports.init = (app, srv)->
-  for type, piler of pilers
+  for type, object of pilers
+    piler = object.piler
+    formats = object.formats
     piler.bind app, srv
 
     for directory in fs.readdirSync "#{__dirname}/#{type}"
@@ -25,13 +31,15 @@ module.exports.init = (app, srv)->
                   piler.addUrl link
                 else
                   piler.addUrl directory link
-          else if file.indexOf(type) != -1
-            if directory is "global"
-              piler.addFile filePath
-            else
-              piler.addFile directory, filePath
+          else
+            for format in formats
+              if file.indexOf(format) != -1
+                if directory is "global"
+                  piler.addFile filePath
+                else
+                  piler.addFile directory, filePath
 
 module.exports.express = (req, res, next)->
-  req.coffee = pilers.coffee;
-  req.less = pilers.less;
+  req.coffee = pilers.coffee.piler;
+  req.less = pilers.less.piler;
   next();
