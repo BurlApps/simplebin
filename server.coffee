@@ -11,11 +11,11 @@ locals              = require "./routes/locals"
 assets              = require "./assets"
 
 # Global Variables
+GLOBAL.isProduction = process.env.NODE_ENV is "production"
 GLOBAL.async        = require "async"
+GLOBAL.Promise      = require "bluebird"
 GLOBAL.config       = require "./config"
 GLOBAL.lib          = require "./lib"
-GLOBAL.Promise      = require "bluebird"
-GLOBAL.isProduction = process.env.NODE_ENV is "production"
 
 # Initialize Lib
 lib.init.bind(lib, ejs)()

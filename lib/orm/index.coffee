@@ -20,11 +20,6 @@ for directory in fs.readdirSync "#{__dirname}"
       model = sequelize.import "#{path}/#{file}"
       models[model.name] = model
 
-# Create Associations
-for name, model of models
-  if "associate" in model
-    model.associate database
-
 # Sync with Database
 sequelize.sync()
 

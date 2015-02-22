@@ -1,1 +1,1 @@
-//fonts.googleapis.com/css?family=Source+Sans+Pro|Droid+Sans|Ubuntu:400,500,700
+//fonts.googleapis.com/css?family=Droid+Sans:400,700|Paytone+One

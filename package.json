@@ -19,6 +19,7 @@
 		"morgan": "1.5.1",
 		"sequelize": "2.0.0-rc8",
 		"mysql": "2.5.4",
-		"piler": "0.5.1"
+		"piler": "0.5.1",
+		"stripe": "3.3.0"
 	}
 }

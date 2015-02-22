@@ -1,0 +1,67 @@
+<% include ../includes/header.html %>
+<div class="header">
+  <div class="logo">EasyBin</div>
+</div>
+<div class="questions">
+  <form class="question">
+    <div class="title">
+      Lets share some basic information, starting with your
+      <strong>name</strong>.
+    </div>
+    <input class="input" name="name" type="text" required/>
+  </form>
+   <form class="question">
+    <div class="title">
+      Hi <span></span>, what is your
+      <strong>email</strong>?
+    </div>
+    <input class="input" name="email" type="email" required/>
+  </form>
+  <form class="question">
+    <div class="title">
+      Thanks! Now show us <strong>where you live</strong>.
+    </div>
+    <input class="input address" name="address" type="text" required/>
+  </form>
+  <form class="question">
+    <div class="title">
+      Awesome! To start your 2 week free trial we need your
+      <strong>credit card number</strong>.
+    </div>
+    <div class="input-image">
+      <input class="input credit-card" name="card" type="text" required/>
+      <img class="card-type"/>
+    </div>
+  </form>
+  <form class="question">
+    <div class="title">
+      Now the card's <strong>expiration date</strong>
+    </div>
+    <input class="input expiration" name="expiration" type="text" required/>
+  </form>
+  <form class="question">
+    <div class="title">
+      And the card's <strong>CVC number</strong>
+    </div>
+    <input class="input cvc" name="cvc" type="text" required/>
+  </form>
+  <div class="question finished">
+    <img class="thumbs-up" src="/img/icons/thumb.png"/>
+    <div class="title">
+      Congrats, your 2 week trial starts now!
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <div class="progress">
+      <div class="title">
+        Your Progress <span>(0%)</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include ../includes/footer.html %>

@@ -1,13 +1,13 @@
 {
 	"general":{
-		"company":"EnjoyPnd",
-		"logo":"EnjoyPnd",
+		"company":"EasyBin",
+		"logo":"EasyBin",
 		"delimeter":" · ",
 		"description":[
-			"Uber for X Carrier/Driver Infrastructure!"
+			"Weekly waste bin management!"
 		],
 		"default":"/",
-		"port": "3000"
+		"port": 3000
 	},
 	"cookies":{
 		"session":{
@@ -21,18 +21,19 @@
 		"debug":false,
 		"protocol":"mysql:",
 		"host":"127.0.0.1",
-		"database":"enjoypnd",
+		"database":"easybin",
 		"username":"root",
 		"password":"",
 		"port": 3306
 	},
 	"stripe":{
 		"production":"",
-		"development":""
+		"development":"",
+		"plan": ""
 	},
 	"icons":{},
 	"forever": {
-		"uid": "dintopia",
+		"uid": "easybin",
 		"silent": false,
 		"watch": true,
 		"watch_directory": "./",

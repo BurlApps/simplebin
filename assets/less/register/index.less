@@ -1,0 +1,135 @@
+@import '../compless/all';
+@bodyWidth: 800px;
+@buttonBackground: #F95339;
+
+.header {
+  width: @bodyWidth;
+  margin: 0 auto;
+  padding: 50px 0 80px 0;
+  .clearfix();
+
+  .logo {
+    color: #fff;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 38px;
+    padding-bottom: 12px;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    .float-left();
+  }
+}
+
+.questions {
+  width: @bodyWidth;
+  margin: 0 auto;
+
+  .question {
+    position: relative;
+    display: none;
+
+    .title {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 26px;
+      font-weight: 400;
+      font-family: 'Droid Sans', sans-serif;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    .input {
+      width: 100%;
+      background: transparent;
+      padding: 20px 0;
+      font-family: 'Droid Sans', sans-serif;
+      font-size: 36px;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+
+      &.credit-card {
+        padding-right: 100px;
+      }
+    }
+
+    .input-image {
+      position: relative;
+
+      .card-type {
+        position: absolute;
+        top: 28px;
+        right: 0;
+        width: 50px;
+        display: none;
+      }
+    }
+
+    &.finished {
+      text-align: center;
+
+      .title {
+        font-size: 34px;
+        font-weight: 700;
+      }
+
+      .thumbs-up {
+        width: 140px;
+        height: 140px;
+        opacity: 0.5;
+        margin-bottom: 35px;
+      }
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: solid 1px rgba(0, 0, 0, 0.4);
+  .box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.2));
+
+  .container {
+    width: @bodyWidth;
+    margin: 0 auto;
+    .clearfix();
+
+    .progress {
+      .float-left();
+
+      .title {
+        color: #fff;
+        font-size: 22px;
+        font-weight: bold;
+        font-family: 'Droid Sans', sans-serif;
+        margin-bottom: 6px;
+
+        span {
+          color: rgba(255, 255, 255, 0.6);
+        }
+      }
+
+      .bar-container {
+        width: 280px;
+        height: 18px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.2);
+        .border-radius(8px);
+
+        .bar {
+          width: 0%;
+          height: 100%;
+          background: #fff;
+          .border-radius(8px);
+          .transition(width);
+        }
+      }
+    }
+  }
+}
