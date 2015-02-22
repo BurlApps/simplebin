@@ -1,6 +1,9 @@
 module.exports = (req, res, next)->
 	# Set Server Root For Non Express Calls
-	req.session.server = "#{req.protocol}://#{req.hostname}:#{config.general.port}"
+	req.session.server = "#{req.protocol}://#{req.hostname}"
+
+	if config.general.port != 80
+	  req.session.server += ":#{config.general.port}"
 
 	if not config.general.production or not config.random
 		config.random = Math.floor (Math.random() * 1000000) + 1

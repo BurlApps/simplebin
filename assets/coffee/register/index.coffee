@@ -53,8 +53,8 @@ questionSubmitted = (e)->
         url = "https://www.facebook.com/dialog/share?"
         url += "app_id=357660074421114&"
         url += "display=page&"
-        url += "href=" + window.location.href + "&"
-        url += "redirect_uri=" + window.location.href
+        url += "href=#{config.host}#{location.pathname}&"
+        url += "redirect_uri=#{config.host}"
 
         $(".footer .next")
           .text("Share")
@@ -76,8 +76,8 @@ activateQuestion = (question)->
 
   percentage = Math.ceil((question/config.questionsLength) * 100)
   percentage = Math.min(percentage, 100)
-  $(".footer .progress span").text("(" + percentage + ")")
-  $(".footer .progress .bar").width(percentage + "%")
+  $(".footer .progress span").text("(#{percentage})")
+  $(".footer .progress .bar").width("#{percentage}%")
 
 cardCheck = ->
   type = $.payment.cardType $(@).val()
