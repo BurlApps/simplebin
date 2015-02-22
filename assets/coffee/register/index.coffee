@@ -9,13 +9,29 @@ $ ->
   $('.input.cvc').payment "formatCardCVC"
   $('.input.expiration').payment "formatCardExpiry"
   $('.input.credit-card').payment("formatCardNumber").keyup cardCheck
+  $('.radio').on "click", radioClicked
   $(".questions .question").on "submit", questionSubmitted
+  $(".footer").on "click", ".next:not(.share)", submitForm
+
+submitForm = (e)->
+  e.preventDefault()
+  e.stopPropagation()
+
+  $(".questions .question")
+    .eq(config.questionTracker)
+    .submit()
+
+radioClicked = ->
+  $(this)
+    .parents(".question")
+    .find(".input")
+    .val($(this).val())
 
 questionSubmitted = (e)->
   e.preventDefault()
   e.stopPropagation()
 
-  input = $(this).find(".input")
+  input = $(this).find(".input, .radio")
 
   if config.active && input.val() != ""
     config.active = false
@@ -33,6 +49,19 @@ questionSubmitted = (e)->
 
       if config.questionTracker == config.questionsLength
         $.post "/register", config.form
+
+        url = "https://www.facebook.com/dialog/share?"
+        url += "app_id=357660074421114&"
+        url += "display=page&"
+        url += "href=" + window.location.href + "&"
+        url += "redirect_uri=" + window.location.href
+
+        $(".footer .next")
+          .text("Share")
+          .addClass("share")
+          .attr
+            href: url
+            target: "_blank"
     , 275
 
 activateQuestion = (question)->

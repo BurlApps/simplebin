@@ -29,15 +29,15 @@ module.exports = (req, res, next)->
 	res.locals.search = ""
 	res.locals.logos =
 		"logo" : "/img/logo.png"
-		"graph": "/favicon/196.png"
-		"1000" : "/favicon/1000.png"
-		"500"  : "/favicon/500.png"
-		"196"  : "/favicon/196.png"
-		"160"  : "/favicon/160.png"
-		"114"  : "/favicon/114.png"
-		"72"   : "/favicon/72.png"
-		"57"   : "/favicon/57.png"
-		"32"   : "/favicon/32.png"
+		"graph": "/favicon/logo.png"
+		"1000" : "/favicon/logo.png"
+		"500"  : "/favicon/logo.png"
+		"196"  : "/favicon/logo.png"
+		"160"  : "/favicon/logo.png"
+		"114"  : "/favicon/logo.png"
+		"72"   : "/favicon/logo.png"
+		"57"   : "/favicon/logo.png"
+		"32"   : "/favicon/logo.png"
 
 	# Redirect
 	if "www" not in req.subdomains

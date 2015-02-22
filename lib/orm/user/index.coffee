@@ -2,8 +2,19 @@ module.exports = (sequelize, DataTypes)->
   return sequelize.define "User",
     name: DataTypes.STRING
     address: DataTypes.STRING
-    email: DataTypes.STRING
+    day: DataTypes.STRING
     stripe: DataTypes.STRING
+    email:
+      type: DataTypes.STRING
+      validate:
+        isUnique: (value, next)->
+          lib.orm.models.User.find
+            where: email: value
+          .then (user)->
+            if user
+              return next "Email address already in use!"
+
+            next()
   ,
     hooks:
       beforeCreate: (user, options, cb)->
@@ -18,6 +29,7 @@ module.exports = (sequelize, DataTypes)->
           lib.stripe.customers.create
             email: this.email
             plan: config.stripe.plan
+            coupon: config.stripe.coupon
           , (error, customer)=>
             if not error and customer
               this.stripe = customer.id

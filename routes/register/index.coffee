@@ -9,6 +9,7 @@ module.exports.register = (req, res, next)->
     name: req.param "name"
     email: req.param "email"
     address: req.param "address"
+    day: req.param "day"
   .then (user)->
     return user.addCard req.param("card"),
       month: parseInt(req.param("expiration").split("/")[0])

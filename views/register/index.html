@@ -19,7 +19,7 @@
   </form>
   <form class="question">
     <div class="title">
-      Thanks! Now show us <strong>where you live</strong>.
+      Great, what's the <strong>address</strong> we're serving?
     </div>
     <input class="input address" name="address" type="text" required/>
   </form>
@@ -45,10 +45,49 @@
     </div>
     <input class="input cvc" name="cvc" type="text" required/>
   </form>
+  <form class="question">
+    <div class="title">
+      Finally, what <strong>day</strong> is your garbage picked up?
+    </div>
+    <input class="input" type="hidden" name="day"/>
+    <div class="radio-group">
+      <input class="radio" type="radio" name="dayR" value="Monday"/>
+      <span>Monday</span>
+    </div>
+    <div class="radio-group">
+      <input class="radio" type="radio" name="dayR" value="Tuesday"/>
+      <span>Tuesday</span>
+    </div>
+    <div class="radio-group">
+      <input class="radio" type="radio" name="dayR" value="Wednesday"/>
+      <span>Wednesday</span>
+    </div>
+    <div class="radio-group">
+      <input class="radio" type="radio" name="dayR" value="Thursday"/>
+      <span>Thursday</span>
+    </div>
+    <div class="radio-group">
+      <input class="radio" type="radio" name="dayR" value="Friday"/>
+      <span>Friday</span>
+    </div>
+    <div class="radio-group">
+      <input class="radio" type="radio" name="dayR" value="Saturday"/>
+      <span>Saturday</span>
+    </div>
+    <div class="radio-group">
+      <input class="radio" type="radio" name="dayR" value="Sunday"/>
+      <span>Sunday</span>
+    </div>
+    <div class="radio-group">
+      <input class="radio" type="radio" name="dayR" checked/>
+      <span>I don't remember</span>
+    </div>
+  </form>
   <div class="question finished">
     <img class="thumbs-up" src="/img/icons/thumb.png"/>
     <div class="title">
-      Congrats, your 2 week trial starts now!
+      Congrats! You’ll be a part of the initial rollout.
+      We will email you 1 week before it starts, in March!
     </div>
   </div>
 </div>
@@ -62,6 +101,7 @@
         <div class="bar"></div>
       </div>
     </div>
+    <a href="" class="next">Next</a>
   </div>
 </div>
 <% include ../includes/footer.html %>

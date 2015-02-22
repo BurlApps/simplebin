@@ -29,7 +29,8 @@
 	"stripe":{
 		"production":"",
 		"development":"",
-		"plan": ""
+		"plan": "easybin",
+		"coupon": "easybin"
 	},
 	"icons":{},
 	"forever": {
