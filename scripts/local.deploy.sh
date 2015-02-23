@@ -1,7 +1,5 @@
 #!/bin/bash
 
-bash scripts/local.kill.sh
-
 if [ "$i" == "prod" ]; then
   NODE_ENV=production forever start -c coffee start.coffee
 else
