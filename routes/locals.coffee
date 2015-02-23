@@ -31,16 +31,16 @@ module.exports = (req, res, next)->
 	res.locals.random = "?rand=" + config.random
 	res.locals.search = ""
 	res.locals.logos =
-		"logo" : "/img/logo.png"
-		"graph": "/favicon/logo.png"
-		"1000" : "/favicon/logo.png"
-		"500"  : "/favicon/logo.png"
-		"196"  : "/favicon/logo.png"
-		"160"  : "/favicon/logo.png"
-		"114"  : "/favicon/logo.png"
-		"72"   : "/favicon/logo.png"
-		"57"   : "/favicon/logo.png"
-		"32"   : "/favicon/logo.png"
+		"logo" : "#{req.session.server}/img/logo.png"
+		"graph": "#{req.session.server}/favicon/logo.png"
+		"1000" : "#{req.session.server}/favicon/logo.png"
+		"500"  : "#{req.session.server}/favicon/logo.png"
+		"196"  : "#{req.session.server}/favicon/logo.png"
+		"160"  : "#{req.session.server}/favicon/logo.png"
+		"114"  : "#{req.session.server}/favicon/logo.png"
+		"72"   : "#{req.session.server}/favicon/logo.png"
+		"57"   : "#{req.session.server}/favicon/logo.png"
+		"32"   : "#{req.session.server}/favicon/logo.png"
 
 	# Redirect
 	if "www" not in req.subdomains
