@@ -9,11 +9,18 @@ module.exports.register = (req, res, next)->
     name: req.param "name"
     email: req.param "email"
     address: req.param "address"
-    day: req.param "day"
+    day: if req.param("day") is "" then null else req.param "day"
+
   .then (user)->
     return user.addCard req.param("card"),
-      month: parseInt(req.param("expiration").split("/")[0])
-      year: parseInt(req.param("expiration").split("/")[1])
+      month: parseInt req.param("expiration").split("/")[0]
+      year: parseInt req.param("expiration").split("/")[1]
     , req.param "cvc"
+
   .then ->
     res.json success: true
+
+  .catch (error)->
+    res.json
+      success: false
+      message: error.errors[0].message

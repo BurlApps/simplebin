@@ -31,14 +31,16 @@ questionSubmitted = (e)->
   e.preventDefault()
   e.stopPropagation()
 
-  input = $(this).find(".input, .radio")
+  input = $(this).find(".input")
+  name = input.attr "name"
+  value = input.val()
 
-  if config.active && input.val() != ""
+  if config.active && value != ""
     config.active = false
-    config.form[input.attr "name"] = input.val()
+    config.form[name] = if value != "null" then value else null
     $(".questions .question").fadeOut 250
 
-    if config.questionTracker == 0
+    if config.questionTracker is 0
       $(".questions .question")
         .eq(1)
         .find("span")
@@ -47,7 +49,7 @@ questionSubmitted = (e)->
     setTimeout ->
       activateQuestion(++config.questionTracker)
 
-      if config.questionTracker == config.questionsLength
+      if config.questionTracker is config.questionsLength
         $.post "/register", config.form
 
         url = "https://www.facebook.com/dialog/share?"
