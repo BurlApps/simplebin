@@ -2,8 +2,7 @@ $ ->
   config.questionTracker = 0
   config.questionsLength = $(".questions .question").length - 1
   config.form = {}
-  config.active = false
-  activateQuestion(config.questionTracker)
+  config.active = true
 
   new google.maps.places.Autocomplete $(".input.address").get 0
   $('.input.cvc').payment "formatCardCVC"
@@ -13,9 +12,19 @@ $ ->
   $(".questions .question").on "submit", questionSubmitted
   $(".footer").on "click", ".next:not(.share)", submitForm
 
+  if config.userName?
+    $(".questions .question")
+      .eq(0)
+      .find(".input")
+      .val(config.userName)
+
+    submitForm()
+  else
+    activateQuestion(config.questionTracker)
+
 submitForm = (e)->
-  e.preventDefault()
-  e.stopPropagation()
+  e?.preventDefault()
+  e?.stopPropagation()
 
   $(".questions .question")
     .eq(config.questionTracker)

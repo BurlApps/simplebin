@@ -76,18 +76,16 @@ body {
     opacity: .8;
   }
 
-  .container {
-    position: relative;
-    z-index: 3;
-    width: 900px;
-    margin: 0 auto;
-  }
-
   *:disabled {
     opacity: .8;
   }
 
-  canvas {
+  & > .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  & > canvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -123,10 +121,5 @@ body {
   iframe {
     outline: none;
     border: none;
-  }
-
-  & > .container {
-    position: relative;
-    z-index: 2;
   }
 }

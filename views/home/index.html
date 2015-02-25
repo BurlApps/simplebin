@@ -1,0 +1,44 @@
+<% include ../includes/header.html %>
+<div class="header">
+  <div class="auth">
+    <a class="login" href="/login">Login</a>
+    <a class="register" href="/register">Sign Up!</a>
+  </div>
+</div>
+<div class="hero">
+  <div class="logo"><%= site_title %></div>
+  <div class="title">Easy. Fast. Nonintrusive</div>
+  <div class="subtitle">Forget that you even needed to take out the trash</div>
+</div>
+<div class="register-form">
+  <form class="form" action="/register" method="get">
+    <input class="input" type="text" name="name" placeholder="Your full name...." />
+    <input class="button" type="submit" value="Sign Up!" />
+    <div class="caption">
+      Your first two weeks are free, cancel at anytime.
+    </div>
+  </form>
+</div>
+<div class="information">
+  <div class="container">
+    <table class="steps">
+      <td class="step">
+        <img src="/img/home/register.png"/>
+        <div class="name">Register Today</div>
+      </td>
+      <td class="step">
+        <img src="/img/home/free.png"/>
+        <div class="name">2 Weeks Free</div>
+      </td>
+      <td class="step">
+        <img src="/img/home/forget.png"/>
+        <div class="name">Forget For Forever</div>
+      </td>
+    </table>
+  </div>
+  <div class="footer">
+    Made with love in Santa Cruz.
+    We start operations in early March, see you then!
+  </div>
+</div>
+<% include ../includes/footer.html %>

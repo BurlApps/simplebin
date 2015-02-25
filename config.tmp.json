@@ -1,7 +1,7 @@
 {
 	"general":{
-		"company":"EasyBin",
-		"logo":"EasyBin",
+		"company":"SimpleBin",
+		"logo":"SimpleBin",
 		"delimeter":" · ",
 		"description":[
 			"Weekly waste bin management!"
@@ -21,7 +21,7 @@
 		"debug":false,
 		"protocol":"mysql:",
 		"host":"127.0.0.1",
-		"database":"easybin",
+		"database":"simplebin",
 		"username":"root",
 		"password":"",
 		"port": 3306
@@ -29,12 +29,12 @@
 	"stripe":{
 		"production":"",
 		"development":"",
-		"plan": "easybin",
-		"coupon": "easybin"
+		"plan": "simplebin",
+		"coupon": "simplebin"
 	},
 	"icons":{},
 	"forever": {
-		"uid": "easybin",
+		"uid": "simplebin",
 		"silent": false,
 		"watch": true,
 		"watch_directory": "./",

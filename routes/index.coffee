@@ -4,7 +4,7 @@ module.exports.init = (app)->
 			if route.route
 				route.route app, routes
 
-		#app.all "*", routes.error
+		app.all "*", routes.error
 
 module.exports.route = (req, res, next)->
 	require("./routes") (routes)->
