@@ -1,10 +1,10 @@
 FROM node
 MAINTAINER Brian Vallelunga <vallelungabrian@gmail.com>
 
-RUN mkdir /easybin
-WORKDIR /easybin
-COPY . /easybin/
+RUN mkdir /simplebin
+WORKDIR /simplebin
+COPY . /simplebin/
 RUN bash scripts/initialize.sh
 
 EXPOSE 1337
-CMD ["coffee", "/easybin/start.coffee"]
+CMD ["coffee", "/simplebin/start.coffee"]
