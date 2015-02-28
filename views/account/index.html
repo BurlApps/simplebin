@@ -3,10 +3,15 @@
   <a class="logo" href="/"><%= site_title %></a>
   <a class="logout" href="/logout">Logout</a>
 </div>
-<div class="banner">
-  Hi <%= user.name %>,<br>
-  you will be a part of the initial rollout.<br>
-  We will email you 1 week before it starts!
+<div class="dashboard">
+  <div class="banner">
+    You are part of the initial rollout,
+    we will email you 1 week before it starts!
+  </div>
+  <div class="forms">
+    <div class="form"></div>
+    <div class="form"></div>
+    <div class="form"></div>
+  </div>
 </div>
-
 <% include ../includes/footer.html %>

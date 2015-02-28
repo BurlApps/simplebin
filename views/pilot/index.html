@@ -1,0 +1,23 @@
+<% include ../includes/header.html %>
+<div class="header">
+  <a class="logo" href="/pilot"><%= site_title %></a>
+</div>
+<form class="form" action="/pilot" method="post">
+  <input class="input" type="email" name="email" placeholder="Email" required/>
+  <input class="input address" type="text" name="address" placeholder="Home Address" required/>
+  <input class="input card" type="tel" name="card" placeholder="Card Number" required/>
+  <input class="input expiration" type="tel" name="expiration" placeholder="Card Expiration (MM/YY)" required/>
+  <input class="input cvc" type="tel" name="cvc" placeholder="Card CVC (XXXX)" required/>
+  <select class="input" name="day" required>
+    <option value="">I Don't Know</option>
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+    <option value="Sunday">Sunday</option>
+  </select>
+  <input class="button" type="submit" value="Sign Up!" />
+</form>
+<% include ../includes/footer.html %>

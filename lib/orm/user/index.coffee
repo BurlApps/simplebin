@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes)->
     day: DataTypes.STRING
     stripe: DataTypes.STRING
     password: DataTypes.STRING
+    pilot: DataTypes.BOOLEAN
     email:
       type: DataTypes.STRING
       validate:
@@ -19,6 +20,8 @@ module.exports = (sequelize, DataTypes)->
   ,
     hooks:
       beforeCreate: (user, options, cb)->
+        user.pilot = !!user.pilot
+
         user.addStripe().then ->
           cb null, user
         .catch (error)->

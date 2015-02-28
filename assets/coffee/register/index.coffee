@@ -81,7 +81,7 @@ activateQuestion = (question)->
     .eq(question)
     .fadeIn(250)
     .find(".input")
-    .attr("placeholder", "")
+    .attr("placeholder", "start typing...")
     .eq(0)
     .focus()
 

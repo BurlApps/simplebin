@@ -1,6 +1,4 @@
 module.exports.index = (req, res, next)->
-  console.log req.session.user
-
   res.render "login/index",
     title: "Login"
     js: req.coffee.renderTags "login"
