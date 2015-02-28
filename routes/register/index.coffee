@@ -18,9 +18,6 @@ module.exports.register = (req, res, next)->
     day: if req.param("day") is "" then null else req.param "day"
 
   .then (user)->
-    req.session.user = user
-    req.session.save()
-
     return user.addCard req.param("card"),
       month: parseInt req.param("expiration").split("/")[0]
       year: parseInt req.param("expiration").split("/")[1]
