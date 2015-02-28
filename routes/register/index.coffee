@@ -14,9 +14,13 @@ module.exports.register = (req, res, next)->
     name: req.param "name"
     email: req.param "email"
     address: req.param "address"
+    password: req.models.User.hash req.param "password"
     day: if req.param("day") is "" then null else req.param "day"
 
   .then (user)->
+    req.session.user = user
+    req.session.save()
+
     return user.addCard req.param("card"),
       month: parseInt req.param("expiration").split("/")[0]
       year: parseInt req.param("expiration").split("/")[1]

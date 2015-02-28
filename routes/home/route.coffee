@@ -1,2 +1,2 @@
 module.exports = (app, routes)->
-	app.get '/', routes.home.index
+	app.get '/', routes.auth.loggedIn, routes.home.index

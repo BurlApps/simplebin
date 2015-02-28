@@ -4,6 +4,8 @@ slashes             = require "connect-slashes"
 ejs                 = require "ejs"
 app                 = express()
 srv                 = require("http").createServer(app)
+session             = require('express-session')
+RedisStore          = require('connect-redis')(session)
 
 # Import Local Modules
 routes              = require "./routes"
@@ -37,11 +39,13 @@ app.use require('body-parser').json()
 app.use require('body-parser').urlencoded extended: true
 app.use require('method-override') "X-HTTP-Method-Override"
 app.use require('cookie-parser')()
-app.use require('express-session')
+app.use session
 	resave: false
 	saveUninitialized: false
 	name: config.cookies.session.key,
 	secret: config.cookies.session.secret
+	unset: "destroy"
+	store: new RedisStore()
 
 # Piler Assests
 assets.init app, srv

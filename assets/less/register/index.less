@@ -42,12 +42,23 @@
     .input {
       width: 100%;
       background: transparent;
-      padding: 20px 0;
+      padding: 20px 10px;
       font-family: 'Droid Sans', sans-serif;
       font-size: 36px;
       color: #fff;
       font-weight: bold;
       text-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+      margin: 0 -10px;
+      border: dashed 4px rgba(255, 255, 255, 0.6);
+      .transition(border-color);
+
+      &:focus {
+        border-color: transparent;
+      }
+
+      &:not(:focus):hover {
+        border-color: #fff;
+      }
 
       &.credit-card {
         padding-right: 100px;

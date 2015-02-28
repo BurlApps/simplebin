@@ -20,6 +20,8 @@
 		"sequelize": "2.0.0-rc8",
 		"mysql": "2.5.4",
 		"piler": "0.5.1",
-		"stripe": "3.3.0"
+		"stripe": "3.3.0",
+		"crypto": "0.0.3",
+		"connect-redis": "2.2.0"
 	}
 }

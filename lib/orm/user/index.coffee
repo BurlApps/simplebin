@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes)->
     address: DataTypes.STRING
     day: DataTypes.STRING
     stripe: DataTypes.STRING
+    password: DataTypes.STRING
     email:
       type: DataTypes.STRING
       validate:
@@ -22,6 +23,10 @@ module.exports = (sequelize, DataTypes)->
           cb null, user
         .catch (error)->
           cb error
+
+    classMethods:
+      hash: (string)->
+        return lib.core.hash string
 
     instanceMethods:
       addStripe: ->
